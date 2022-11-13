@@ -1,4 +1,4 @@
-// Tempo de expiração do contador
+// Tempo de expiração da contagem regressiva
 const expiration = {
     years: 0,
     months: 0,
@@ -12,6 +12,7 @@ const time = document.getElementById('timer');
 
 let timer;
 
+// Limita a frequência de execuções de uma função 
 const debounce = (func, delay = 10, immediate = true) => {
     let timeout;
 
@@ -32,7 +33,7 @@ const debounce = (func, delay = 10, immediate = true) => {
     };
 };
 
-
+// Muda o valor da contagem regressiva
 const changeTime = (timeStamp) => {
     const now = new Date();
 
@@ -55,7 +56,7 @@ const changeTime = (timeStamp) => {
 }
 
 
-// Configura temporizador de intervalo pra mudar o valor do contador
+// Configura contador pra mudar o valor da contagem regressiva
 const setTimer = () => {
     const cookieString = document.cookie;
 
