@@ -108,7 +108,7 @@ window.addEventListener('wheel', (event) => {
     document.body.scrollTop += event.deltaY * 5;
 }, { passive: false });
 
-// Remove a opacidade da chamada para o cadastro se a página tiver rolado para baixo
+// Remove a opacidade da chamada para o cadastro ao rolar para baixo
 document.body.addEventListener('scroll', debounce(() => {
     const callToAction = document.querySelector('.call-to-action');
 

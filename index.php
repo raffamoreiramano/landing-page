@@ -1,7 +1,10 @@
 <?php
+// Trata o request se tiver algo no corpo do POST
 if (isset($_POST['email'])) {
-    define('appropriate', true);
+    // Avisa o arquivo scripts que hove um POST request
+    define('request', true);
 
+    // Inclui o arquivo scripts
     require_once('./scripts.php');
 
     try {
@@ -29,7 +32,8 @@ if (isset($_POST['email'])) {
     }
 }
 
-if (!defined('request')) {
+// Se não houver a constante request vinda do arquivo scripts, redireciona para home.html
+if (!defined('aproved')) {
     require_once('./home.html');
 }
 

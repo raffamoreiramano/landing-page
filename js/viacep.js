@@ -1,3 +1,4 @@
+// Realiza um GET request
 const fetchLocation = async (url) => {
     const response = await fetch(url)
     .then((res) => {

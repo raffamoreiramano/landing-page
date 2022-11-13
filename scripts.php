@@ -1,7 +1,9 @@
 <?php
-define('request', true);
+// Avisa que passou pelo arquivo scripts
+define('aproved', true);
 
-if (!defined('appropriate')) {
+// Volta sem executar o resto do código se não tiver vindo de um POST request
+if (!defined('request')) {
     header("Location: ./index.php");
 
     exit;
@@ -14,6 +16,8 @@ $DB = './db/users.txt';
 $LIST = isset($_COOKIE['email_list']) ? json_decode($_COOKIE['email_list'], true) : [];
 $EXPIRATION = time() + 60 * 60 * 24 * 7;
 
+
+// Busca ou cria por um arquivo users.txt e retorna os dados ou uma array vazia
 function openDB() {
     global $DB;
 
@@ -66,6 +70,7 @@ function setEmailCookie($email) {
     return setcookie('email_list', json_encode($list), $EXPIRATION);
 }
 
+// Adiciona usuário ao arquivo users.txt
 function setUser($name, $email) {
     global $DB;
 

@@ -1,6 +1,6 @@
 <?php
+// Exemplo: e-mail.local_part@domain.com.br
 function isEmailValid($email) {
-    // e-mail.local_part@domain.com.br
     $characters = '[0-9a-z\x{00C0}-\x{00FF}]';
     $punctuation = '[0-9a-z\x{00C0}-\x{00FF}+-.]';
     $special = '[!#$%&*+-_.]';

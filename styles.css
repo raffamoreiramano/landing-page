@@ -1,3 +1,4 @@
+/* Muda cor do tema */
 :root {
     --bs-dark-rgb: 10, 15, 20;
 }
@@ -22,6 +23,8 @@ body::after {
     transition: 500ms ease-in-out;
 }
 
+
+/* Define imagem de fundo */
 body::before {
     position: absolute;
     top: 0;
@@ -38,6 +41,8 @@ body::before {
     z-index: -1;
 }
 
+
+/* Brilho verde para enaltecer a chamada para o cadastro */
 body::after {
     position: fixed;
     bottom: 0;
@@ -55,12 +60,14 @@ body::after {
     transition: 500ms ease-in-out;
 }
 
+/* Escurece o fundo se rolar a página */
 .scrolled-down::before {
     box-shadow: inset 0 -20rem 5rem 0 rgb(var(--bs-dark-rgb));
 
     overflow: hidden;
 }
 
+/* Remove brilho do fundo */
 .scrolled-down::after {
     width: 0;
     height: 0;
@@ -72,6 +79,8 @@ body::after {
     transition: opacity 500ms ease-in-out, translate 500ms ease-in-out;
 }
 
+
+/* Esconde chamada para o cadastro */
 .scrolled-down .call-to-action {
     opacity: 0;
     pointer-events: none;
@@ -80,6 +89,8 @@ body::after {
     translate: 0 -20vh;
 }
 
+
+/* Define rolamento snap */
 @media screen and (min-width: 992px) {
     body {
         scroll-snap-type: y mandatory;
@@ -112,6 +123,7 @@ header {
     background-image: linear-gradient(to bottom, rgb(var(--bs-dark-rgb)) 65%, rgba(var(--bs-dark-rgb), .5) 85%, transparent 97%);
 }
 
+/* Redefine classe de font-size do bootstrap para considerar a herança de font-size */
 .fs-1 {
     font-size: 2.5em !important;
 }
