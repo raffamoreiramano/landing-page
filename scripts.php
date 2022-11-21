@@ -41,7 +41,11 @@ function openDB() {
         return [];
     }
 
-    if (!array_key_exists('email', $rows[0]) || !array_key_exists('email', $rows[0])) {
+    if (empty($rows)) {
+        return [];
+    }
+
+    if (!array_key_exists('name', $rows[0]) || !array_key_exists('email', $rows[0])) {
         return [];
     }
 
